@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upisi studenata</title>
+
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      main {
+        margin-top: 60px;
+      }
+      #content {
+        display: none;
+      }
+      form {
+        width: 350px;
+        margin-bottom: 10px;
+      }
+      input{
+          margin: 0px 0px 10px 0px;
+      }
+      ul {
+        margin-bottom: 0px;
+      }
+
+      #statusUpisan .content {
+        background-color: #98FF98;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <h1 class="navbar-brand col-sm-3 col-md-2 mr-0">Upisi studenata</h1>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
+          <h3 style="color:#fff;">Račun: </h3><small><a class="nav-link" href="#"><span id="account"></span></a></small>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-lg-12 d-flex justify-content-center">
+          <div id="loader" class="text-center">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div style="border: 2px dotted black; text-align: center; width: 80%;" id="content">
+            <form onSubmit="App.createTask(); return false;" style="position:relative;margin:30px auto 100px;">
+              <input id="newTask" type="text" class="form-control" placeholder="Ime studenta" required>        
+              <input type="submit" value="Dodaj studenta" style="background-color: #1084C4; color: #f1f1f1;font-size:18px;border:0px; border-radius: 3px;height: 40px;">
+            </form> 
+            <h1>Lista studenata</h1>
+            <ul id="taskList" class="list-unstyled" style="position: relative; width: 50%; float: left;">
+                <h2>Status: Prijavljen</h2>
+              <div class="taskTemplate" class="checkbox" style="display: none">
+                <label>
+                  <input type="checkbox" />
+                  <span class="content"></span>
+                </label>
+              </div>
+            </ul>
+            <ul id="statusUpisan" class="list-unstyled" style="position: relative; width: 40%; float: right;">
+              <h2>Status: Upisan</h2>
+            </ul>
+          </div>
+        </main>
+      </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
